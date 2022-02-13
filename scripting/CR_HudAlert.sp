@@ -10,8 +10,8 @@ public Plugin myinfo =
 {
 	name = "[CR] Hud Alert",
 	author = "NickFox",
-	description = "Hud alret on custom round.",
-	version = "1.0",
+	description = "Hud alert on custom round.",
+	version = "1.1",
 	url = "https://vk.com/nf_dev"
 }
 
@@ -30,7 +30,7 @@ public void CR_OnRoundStart(KeyValues Kv_0)
 		KvCopySubkeys(Kv_0, Kv);		
 		Kv.Rewind();
 		Kv_0.GetSectionName(g_sText, sizeof(g_sText));
-		Format(g_sText, sizeof(g_sText), "<font class='fontSize-x'><font color='#ff7070'>%s </font></font>", g_sText);		
+		Format(g_sText, sizeof(g_sText), "<font class='fontSize-l'><font color='#ff7070'>%s \n", g_sText);		
 		
 		if(Kv.JumpToKey("Weapons"))
 		{
@@ -58,17 +58,17 @@ public void CR_OnRoundStart(KeyValues Kv_0)
 
 void AddHS()
 {
-	Format(g_sText, sizeof(g_sText), "%s <font><img src='%shud/deathnotice/icon-headshot.png'/></font>", g_sText, SOURCE_PATH);
+	Format(g_sText, sizeof(g_sText), "%s <font class='fontSize-l'><img src='%shud/deathnotice/icon-headshot.png'/></font>", g_sText, SOURCE_PATH);
 }
 
 void AddNZ()
 {
-	Format(g_sText, sizeof(g_sText), "%s <font><img src='%shud/deathnotice/noscope.svg'/></font>", g_sText, SOURCE_PATH);
+	Format(g_sText, sizeof(g_sText), "%s <font class='fontSize-l'><img src='%shud/deathnotice/noscope.svg'/></font>", g_sText, SOURCE_PATH);
 }
 
 void AddWeapon(const char[] sWeapon)
 {
-	Format(g_sText, sizeof(g_sText), "%s <font><img src='%sicons/equipment/%s.svg'/></font>", g_sText, SOURCE_PATH, sWeapon[7]);
+	Format(g_sText, sizeof(g_sText), "%s <font class='fontSize-l'><img src='%sicons/equipment/%s.svg'/></font>", g_sText, SOURCE_PATH, sWeapon[7]);
 }
 
 
